@@ -1,0 +1,5 @@
+**/.DS_Store
+**/node_modules/
+**/frontend/build/
+**/backend/target/
+./.vscode
