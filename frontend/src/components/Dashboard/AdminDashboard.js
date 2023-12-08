@@ -133,15 +133,12 @@ class AdminDashboard extends Component {
       PageNumber: value,
     });
 
-<<<<<<< HEAD
     // if (this.state.OpenHome) {
     //   await this.GetAllOrderDetails(value);
     // }
-=======
     if (this.state.OpenHome) {
       // await this.GetAllOrderDetails(value);
     }
->>>>>>> refs/remotes/origin/master
     if (this.state.FeedBackDetails) {
       await this.handleFeedBackAdmin(value)
     }
@@ -187,10 +184,7 @@ class AdminDashboard extends Component {
       CustomerListManagement: false,
       CourierListAdmin: false,
     });
-<<<<<<< HEAD
 
-=======
->>>>>>> refs/remotes/origin/master
     // this.GetAllOrderDetails(this.state.PageNumber);
   };
 
