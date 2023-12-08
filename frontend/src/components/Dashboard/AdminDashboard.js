@@ -155,7 +155,7 @@ class AdminDashboard extends Component {
     });
 
     if (this.state.OpenHome) {
-      await this.GetAllOrderDetails(value);
+      // await this.GetAllOrderDetails(value);
 
     }
     if (this.state.FeedBackDetails) {
@@ -222,7 +222,7 @@ class AdminDashboard extends Component {
       CourierListAdmin: false,
     });
 
-    this.GetAllOrderDetails(this.state.PageNumber);
+    // this.GetAllOrderDetails(this.state.PageNumber);
   };
 
 
