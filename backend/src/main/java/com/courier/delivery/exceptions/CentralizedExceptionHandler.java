@@ -30,9 +30,4 @@ public class CentralizedExceptionHandler {
         return new BasicDTO<>(false,  e.getMessage(), "Exception");
     }
 
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    @ExceptionHandler(CourierNotFoundException.class)
-//    public BasicDTO<String> handle (CourierNotFoundException e) {
-//        return new BasicDTO<>(false,  e.getMessage(), "Exception");
-//    }
 }
