@@ -34,9 +34,6 @@ export default class SignIn extends Component {
     this.setState({ open: false });
   };
 
-  
-
-
   handleChange = (e) => {
     const { name, value } = e.target;
     this.setState(
@@ -51,9 +48,7 @@ export default class SignIn extends Component {
 
   CheckValidation() {
     console.log("CheckValidation Calling...");
-
     this.setState({ UsernameFlag: false, PasswordFlag: false });
-
     if (this.state.Username === "") {
       this.setState({ UsernameFlag: true });
     }
@@ -63,22 +58,20 @@ export default class SignIn extends Component {
   }
 
   handleSubmit = (e) => {
-    
     this.CheckValidation();
     if (this.state.Username !== "" && this.state.Password !== "") {
       console.log("Acceptable");
       let data = {
         email: this.state.Username,
         password: this.state.Password,
-       
       };
       authServices
         .SignIn(data)
         .then((data) => {
           console.log("Sign In Data : ", data);
           if (data.data.success) {
-             localStorage.setItem("token", data.data.data.token);
-             localStorage.setItem("UserId", data.data.data.user.id);
+            localStorage.setItem("token", data.data.data.token);
+            localStorage.setItem("UserId", data.data.data.user.id);
             if (data.data.data.user.role === "USER") {
               localStorage.setItem("USERID", data.data.data.user.id);
               this.props.history.push("/UserDashboard");
@@ -87,12 +80,12 @@ export default class SignIn extends Component {
               localStorage.setItem("AdminId", data.data.data.user.id);
               this.props.history.push("/AdminDashboard");
             }
-           else{
-            localStorage.setItem("AgentId", data.data.data.user.id);
+            else{
+              localStorage.setItem("AgentId", data.data.data.user.id);
               this.props.history.push("/AgentDashboard");
-           }
-            
-          } else {
+            }
+          } 
+          else {
             console.log("Something Went Wrong");
             this.setState({ open: true, Message: data.message });
           }
@@ -139,7 +132,6 @@ export default class SignIn extends Component {
                 value={this.state.Password}
                 onChange={this.handleChange}
               />
-           
             </form>
           </div>
           <div className="Buttons" style={{ alignItems: "flex-start" }}>
@@ -150,15 +142,12 @@ export default class SignIn extends Component {
               className="Btn"
               variant="contained"
               color="primary"
-              onClick={this.handleSubmit}
-            >
+              onClick={this.handleSubmit}>
               Sign In
             </Button>
           </div>
         </div>
-        {/* <div>
-        <img src={delivery} alt="Italian Trulli"/>
-        </div> */}
+
         <Snackbar
           anchorOrigin={{
             vertical: "bottom",

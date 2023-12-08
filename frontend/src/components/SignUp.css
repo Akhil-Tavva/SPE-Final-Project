@@ -34,7 +34,7 @@
 	justify-content: center;
 	align-items: center;
 	font-family: "Roboto";
-	font-size: 25px;
+	font-size: 35px;
 	font-weight: 500;
 	color: black;
 }
@@ -53,13 +53,13 @@
 .SignUp-Container .SignUp-SubContainer .Body .form .TextField {
 	width: 300px;
 }
-.SignUp-Container .SignUp-SubContainer .Body .form .Roles {
+/* .SignUp-Container .SignUp-SubContainer .Body .form .Roles {
 	display: block;
 	width: 100%;
 }
 .SignUp-Container .SignUp-SubContainer .Body .form .Roles .RoleValue {
 	width: 100px;
-}
+} */
 .SignUp-Container .SignUp-SubContainer .Body .form .PassError {
 	width: 59%;
 	font-size: 13px;

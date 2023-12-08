@@ -12,10 +12,13 @@
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
 }
-.ImageLogin{
+
+/* .ImageLogin{
     background-image: url('./Asserts/Food_Delivery11.avif') repeat 0 0 !important;
-}
+} */
+
 .SignIn-Container .SignUp-SubContainer {
+    /* */
     height: 500px;
     width: 450px;
     border: 0.5px solid #ce7015;
@@ -24,28 +27,30 @@
     box-shadow: 6px 8px 10px 0px #c83e0b;
 }
 .SignIn-Container .SignUp-SubContainer .Title {
+    /* */
     font-family: "Roboto";
     font-size: 25px;
     font-weight: 500;
     color: #202020;
     margin: 45px 0 16px 0;
 }
-.SignIn-Container .SignUp-SubContainer .Header_Container {
+.SignIn-Container .SignUp-SubContainer .Header_Container { 
+    /* this css is for the header "Login" */
     height: 8%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
     font-family: "Roboto";
-    font-size: 25px;
+    font-size: 35px;
     font-weight: 500;
     color: black;
 }
-.SignIn-Container .SignUp-SubContainer .Body {
+.SignIn-Container .SignUp-SubContainer .Body { /* */
     height: 55%;
     width: 100%;
 }
-.SignIn-Container .SignUp-SubContainer .Body .form {
+.SignIn-Container .SignUp-SubContainer .Body .form { /* */
     height: 100%;
     width: 100%;
     display: flex;
@@ -56,13 +61,15 @@
 .SignIn-Container .SignUp-SubContainer .Body .form .TextField {
     width: 300px;
 }
-.SignIn-Container .SignUp-SubContainer .Body .form .Roles {
+/* .SignIn-Container .SignUp-SubContainer .Body .form .Roles {
     display: block;
     width: 100%;
-}
-.SignIn-Container .SignUp-SubContainer .Body .form .Roles .RoleValue {
-    width: 100px;
-}
+} 
+.SignIn-Container .SignUp-SubContainer .Body .form .RoleValue {
+    display: block;
+    width: 100%;
+}*/
+
 .SignIn-Container .SignUp-SubContainer .Buttons {
     width: 100%;
     display: flex;
@@ -70,7 +77,7 @@
     justify-content: space-around;
 }
 .SignIn-Container .SignUp-SubContainer .Buttons .Btn {
-    height: 35px;
+    height: 40px;
     text-transform: none;
 }
 .SignIn-Container .SignUp-SubContainer:hover {
