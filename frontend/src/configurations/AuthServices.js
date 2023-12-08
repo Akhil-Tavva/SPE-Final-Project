@@ -53,26 +53,6 @@ export default class AuthServices {
   DeleteCourierId(id) {
     return axiosServices.Delete(baseURL+ `admin/courier/delete/${id}`,true,headers);
   }
-
-  DeleteCourierIdAgent(id) {
-    return axiosServices.Delete(baseURL+ `admin/agent/delete/${id}`,true,headers);
-  }
-
-  AssignAgent(AID,CID) {
-    return axiosServices.Get(baseURL + `admin/courier/assignAgent/${AID}/${CID}`,true,headers);
-  }
-
-  GetAllAgentData() {
-    return axiosServices.Get(baseURL  + `agent/courier/getAll`,true,headers);
-  }
-
-  UpdateStatusByAgent(id,data) {
-    return axiosServices.put(baseURL  + `agent/courier/update/${id}`,data, true,headers);
-  }
-
-  UpdateAgentDataByADmin(AgentId,data) {  
-    return axiosServices.put(baseURL + `admin/agent/update/profile/${AgentId}`,data, true, headers);
-  }
   
   CalculatedAmountForWeight(data) {
     return axiosServices.post(baseURL + `user/rates/calculate`, data, true, headers);

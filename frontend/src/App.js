@@ -2,10 +2,8 @@ import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
-// import Auth from './components/Auth'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import UserDashboard from './components/Dashboard/UserDashboard'
-import AgentDashboard from './components/Dashboard/AgentDashboard'
 
 
 function App() {
@@ -17,7 +15,6 @@ function App() {
           <Route exact path="/SignIn" component={SignIn} />
           <Route exact path="/AdminDashboard" component={AdminDashboard} />
           <Route exact path="/UserDashboard"   component={UserDashboard} />
-          <Route exact path="/AgentDashboard" component={AgentDashboard}/>
         
         </Switch>
       </Router>

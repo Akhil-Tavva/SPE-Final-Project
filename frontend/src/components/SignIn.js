@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import AuthServices from "../configurations/AuthServices";
 import "./SignIn.css";
-import delivery from "../components/Asserts/Food_Delivery11.avif";
 import TextField from "@material-ui/core/TextField";
-// import Radio from "@material-ui/core/Radio";
-// import RadioGroup from "@material-ui/core/RadioGroup";
-// import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
-// import { Dataservices } from "../configurations/Dataservice";
 
 const authServices = new AuthServices();
 
@@ -33,9 +28,6 @@ export default class SignIn extends Component {
     }
     this.setState({ open: false });
   };
-
-  
-
 
   handleChange = (e) => {
     const { name, value } = e.target;
