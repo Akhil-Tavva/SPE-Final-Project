@@ -134,8 +134,8 @@ class AdminDashboard extends Component {
     });
 
     if (this.state.OpenHome) {
-      await this.GetAllOrderDetails(value);
-
+      // await this.GetAllOrderDetails(value);
+    }
     if (this.state.FeedBackDetails) {
       await this.handleFeedBackAdmin(value)
     }
@@ -181,8 +181,7 @@ class AdminDashboard extends Component {
       CustomerListManagement: false,
       CourierListAdmin: false,
     });
-
-    this.GetAllOrderDetails(this.state.PageNumber);
+    // this.GetAllOrderDetails(this.state.PageNumber);
   };
 
   handleCustomerList = () => {
@@ -741,7 +740,7 @@ class AdminDashboard extends Component {
                                             </TableCell>
 
                                             <TableCell align="center" style={{ width: 100 }}>
-                                             <EditIcon onClick={() => this.handleEditAdmin(data.id,data.firstName,data.lastName,data.email,data.mobileNo)}/>
+                                              <EditIcon onClick={() => this.handleEditAdmin(data.id,data.firstName,data.lastName,data.email,data.mobileNo)} />;
                                               <DeleteIcon style={{ cursor: "pointer" }} onClick={() => this.handledeleteAdminAgent(data.id)} />
 
                                             </TableCell>
