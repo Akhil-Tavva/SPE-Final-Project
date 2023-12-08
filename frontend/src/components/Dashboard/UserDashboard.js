@@ -82,13 +82,8 @@ export default class FarmerDashboard extends Component {
       CourierData:{},
       TrackDataArr: {},
       AmountCalculate:0
-
-
     };
   }
-
-
-
 
   handlePluseIcon = () => {
     this.setState({
@@ -97,23 +92,16 @@ export default class FarmerDashboard extends Component {
     })
   }
 
-
-
-  ////////////////////////////////////
-
-
   handleSnackBarClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     this.setState({ OpenSnackBar: false });
   };
 
   handlePaging = async (e, value) => {
-    const { OrderCourierFlag, TrackCourierFlag, BillingListFlag, FeedbackFlag } = this.state
+    const {OrderCourierFlag, TrackCourierFlag, BillingListFlag, FeedbackFlag} = this.state
     console.log("Current Page : ", value);
-
     this.setState({
       PageNumber: value,
     });
@@ -129,20 +117,10 @@ export default class FarmerDashboard extends Component {
     }
   };
 
-
   SignOut = async () => {
     await localStorage.removeItem("token");
     this.props.history.push("/SignIn");
   };
-
-
-
-
-
-
-
-
-
 
   /////////////////////////////////////COURIER MANAGEMENT////////////////////////////////////////////////////
   CheckValidationTrackingID = () => {
@@ -161,10 +139,8 @@ export default class FarmerDashboard extends Component {
   handleTrackingSubmit = (e) => {
     e.preventDefault();
 
-
     let isvalid = this.CheckValidationTrackingID()
     if (isvalid) {
-
       this.setState({ OpenLoader: true })
       authServices
         .TRackCourierDetails(this.state.TrackingID)
@@ -178,16 +154,12 @@ export default class FarmerDashboard extends Component {
             Message: data.data.message,
             orderId: data.data.data.id
           })
-
         })
         .catch((error) => {
-
           this.setState({ OpenLoader: false });
         });
     }
-
   }
-
 
 handlePayentModeInput=()=>{
   let isvalid= true;
@@ -195,22 +167,20 @@ handlePayentModeInput=()=>{
     document.getElementById("PaymentType").classList.add("validation")
     isvalid=false
   }
- if(this.state.PaymentType != ""){
-  if(this.state.PaymentDetailUPI === ""){
-    document.getElementById("PaymentDetailUPI").classList.add("validation")
-    isvalid=false
+  if(this.state.PaymentType != ""){
+    if(this.state.PaymentDetailUPI === ""){
+      document.getElementById("PaymentDetailUPI").classList.add("validation")
+      isvalid=false
+    }
   }
- }
   return isvalid;
 }
 
   handleSubmitDetailsPaymentDetails = (e) => {
-    
-    e.preventDefault()
+  e.preventDefault()
   let isvalid = this.handlePayentModeInput()
   if(isvalid){
     let res = {
-
       "id": 0,
       "source": this.state.Source?.toString(),
       "destination": this.state.Destination?.toString(),
@@ -229,10 +199,8 @@ handlePayentModeInput=()=>{
     authServices
       .CreateCourierService(res)
       .then((data) => {
-        console.log("filedata : ", data);
-        
+        console.log("filedata : ", data);  
         if (data.data.data !== null) {
-
           this.setState({
             CourierData: data.data.data,
             Destination: "",
@@ -246,7 +214,6 @@ handlePayentModeInput=()=>{
             OpenSnackBar: true,
             Message: data.data.message
           });
-
         }
       })
       .catch((error) => {
@@ -263,7 +230,6 @@ handlePayentModeInput=()=>{
     if (e.target.name === "CourierType") {
       this.setState({
         CourierType: e.target.value,
-     
       })
       document.getElementById("CourierType").classList.remove("validation")
     }
@@ -718,15 +684,12 @@ handlePayentModeInput=()=>{
 
                                 </> :
                                 <>
-                                 <div className="plusContent">
+                                <div className="plusContent">
                                 <div className="plusContent_sub">
                                   <div className="sportstitlePlus">Bill Details</div>
                                   <div>
                                     <>
-                                     
-                                       
                                           <table className="tableData">
-
                                             <tr>
                                               <td>Source :</td>
                                               <td>{CourierData.source}</td>
@@ -740,40 +703,27 @@ handlePayentModeInput=()=>{
                                             <tr>
                                               <td>Date  :</td>
                                               <td>{CourierData.createdOn}</td>
-
                                             </tr>
                                             <tr>
                                               <td>Amount :</td>
                                               <td>{CourierData.amount}</td>
-
                                             </tr>
                                             <tr>
                                               <td>Payment Mode :</td>
                                               <td>{CourierData.paymentMode}</td>
-
                                             </tr>
                                             
                                           </table>
-
                                           <button className="m-4" type="button" class="btn btn-secondary " onClick={()=>this.handleCanel()}>Cancel</button>
-                                      
                                     </>
-
-
-
                                   </div>
                                 </div>
-
-
                               </div>
-
                                 </>}
                             </>}</>
-
                       }
                     </>
                   }
-
                   {TrackCourierFlag &&
                     <>
                       {TrackingIDData ?
@@ -804,12 +754,9 @@ handlePayentModeInput=()=>{
                                     >Submit</button>
                                     <button className="cancelbhn">Cancel</button>
                                   </div>
-
                                 </form>
                               </div>
                             </div>
-
-
                           </div>
 
                         </> :
@@ -915,9 +862,6 @@ handlePayentModeInput=()=>{
                                     <TableCell align="Left" style={{ width: 100 }}>
                                       {TrackDataArr.amount}
                                     </TableCell>
-
-
-
                                   </>
 
                                   {/* )} */}
@@ -930,10 +874,8 @@ handlePayentModeInput=()=>{
                       }
                     </>}
 
-
                   {MyOrder &&
                     <>
-
 
                       <div className="GetUserMenus-SubContainer mt-3">
                         <TableContainer component={Paper} className="tableStyle">
@@ -1054,8 +996,6 @@ handlePayentModeInput=()=>{
                                         <TableCell align="center" style={{ width: 100 }}>
                                           {data.status}
                                         </TableCell>
-
-
                                       </>
                                       {/* ) : ( */}
                                       <></>
@@ -1067,12 +1007,7 @@ handlePayentModeInput=()=>{
                             </TableBody>
                           </Table>
                         </TableContainer>
-
-
                       </div>
-
-
-
                       <Pagination
                         className="Pagination"
                         count={this.state.TotalPages}
@@ -1084,18 +1019,10 @@ handlePayentModeInput=()=>{
                       />
                     </>
                   }
-
-
-
                 </div>
-
-
-
               </div>
-
             </div>
           </div>
-
           <div className="FooterDiv">Footer</div>
         </div>
         <Backdrop

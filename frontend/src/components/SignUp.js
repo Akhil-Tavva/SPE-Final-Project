@@ -12,9 +12,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Radio from "@material-ui/core/Radio";
 
 
-
 const authServices = new AuthServices();
-
 const PasswordRegex = RegExp(
   /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/i
 );
@@ -23,14 +21,11 @@ export default class SignUp extends Component {
   constructor() {
     super();
     this.state = {
-
       FirstName: "",
       LastName: "",
       UserName: "",
       Password: "",
-
       Role: "Admin",
-
       FirstNameFlag: false,
       LastNameFlag: false,
       UserNameFlag: false,
@@ -52,14 +47,14 @@ export default class SignUp extends Component {
     };
   }
 
-  handleClose = (e, reason) => {
+  handleClose = (e, reason) => { // handling close event
     if (reason === "clickaway") {
       return;
     }
     this.setState({ open: false });
   };
 
-  CheckValidity() {
+  CheckValidity() { // checking the credentials validity of the input fields
     console.log("Check Validity Calling");
     //Reset Flag
     this.setState({
@@ -71,7 +66,6 @@ export default class SignUp extends Component {
       ZipFlag: false,
       AddressFlag: false,
       CityFlag: false,
-
       RoleFlag: false,
     });
 
@@ -81,7 +75,6 @@ export default class SignUp extends Component {
     if (this.state.LastName === "") {
       this.setState({ LastNameFlag: true });
     }
-
     if (this.state.UserName === "") {
       this.setState({ UserNameFlag: true });
     }
@@ -91,16 +84,13 @@ export default class SignUp extends Component {
     if (this.state.Password === "") {
       this.setState({ PasswordFlag: true });
     }
-    
     if (this.state.Radiovalue === "Admin" && this.state.Role === "") {
       this.setState({ RoleFlag: true });
     }
   }
 
-  handleSubmit = (e) => {
-
+  handleSubmit = (e) => { // handling the submit data 
     this.CheckValidity();
-
     if (
       this.state.LastName !== "" &&
       this.state.FirstName !== "" &&
@@ -123,10 +113,7 @@ export default class SignUp extends Component {
         .then((data) => {
           console.log("data : ", data);
           if (data.data.success) {
-
             this.props.history.push("/SignIn");
-
-
           } else {
             console.log("Sign Up Failed");
             this.setState({ open: true, Message: data.data.message });
@@ -140,11 +127,10 @@ export default class SignUp extends Component {
       console.log("Not Acceptable");
       this.setState({ open: true, Message: "Please Fill Required Field" });
     }
-
   };
 
 
-  handleChangePassword = (e) => {
+  handleChangePassword = (e) => { // handle change password
     const { name, value } = e.target;
     console.log("Regex Match : ", PasswordRegex.test(value));
     if (!PasswordRegex.test(value)) {
@@ -165,7 +151,7 @@ export default class SignUp extends Component {
     );
   };
 
-  handleChangeConfirmPassword = (e) => {
+  handleChangeConfirmPassword = (e) => { // confirming the updated password
     if (e.target.value === this.state.Password) {
       this.setState({
         ConfirmPassword: e.target.value,
@@ -173,8 +159,6 @@ export default class SignUp extends Component {
       })
     }
   }
-
-
 
   handleChange = (e) => {
     const { name, value } = e.target;
@@ -190,7 +174,6 @@ export default class SignUp extends Component {
         LastNameFlag: false
       })
     }
-
 
     if (e.target.name === "UserName") {
       this.setState({
@@ -208,11 +191,9 @@ export default class SignUp extends Component {
     if (e.target.name === "Role") {
       this.setState({
         Role: e.target.value,
-    
       })
     }
 
-    
     this.setState(
         { [name]: value },
         console.log("Name : ", name, "Value : ", value)
@@ -223,10 +204,11 @@ export default class SignUp extends Component {
     this.setState({ Radiovalue: e.target.value });
   };
 
-  handleSignIn = (e) => {
+  handleSignIn = (e) => { // go to page where sign in takes place 
     this.props.history.push("/SignIn");
   };
 
+  // rendering the functionalities in the user interface
   render() {
     console.log("state : ", this.state);
     return (
@@ -272,7 +254,7 @@ export default class SignUp extends Component {
 
 
               <TextField
-                type="number"
+                type="TextField"
                 className="TextField"
                 name="MobileNo"
                 label="Mobile no"
@@ -297,14 +279,12 @@ export default class SignUp extends Component {
               />
               {this.state.PasswordFlag ? (
                 <div className="PassError">
-                  Password Must Contain Upper Letter, Lower Letter, Symbol &
+                  Password Must Contain Upper and Lower Letters, Symbols &
                   Number.
                 </div>
               ) : (
                 <></>
               )}
-
-
 
               <RadioGroup
                 //   aria-label="gender"
