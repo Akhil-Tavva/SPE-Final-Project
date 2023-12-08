@@ -1,13 +1,9 @@
 import React, { Component } from "react";
 
 import "./UserDashboard.css";
-// import "../Product/GetUserMenus.css"
 import Modal from "@material-ui/core/Modal";
-// import Backdrop from "@material-ui/core/Backdrop";
+import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-// import GetUserMenus from "../Product/GetUserMenus";
-// import ProductServices from "../../services/ProductServices";
-// import CustomerServices from "../../services/CustomerServices";
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -24,8 +20,6 @@ import moment from 'moment';
 import DeleteIcon from "@material-ui/icons/Delete";
 
 import RestaurantIcon from "@material-ui/icons/Restaurant";
-// import AgricultureIcon from '@mui/icons-material/Agriculture';
-// import AgricultureIcon from '@material-ui/icons/Agriculture';
 import KitchenIcon from '@material-ui/icons/Kitchen';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -34,7 +28,6 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
 import FeedbackIcon from "@material-ui/icons/Feedback";
-import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
@@ -47,14 +40,11 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import AuthServices from "../../configurations/AuthServices";
 
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
 import Pagination from "@material-ui/lab/Pagination";
 import { FormatListBulletedRounded } from "@material-ui/icons";
 
 const authServices = new AuthServices();
 const minDate = new Date(Date.now());
-// const customerServices = new CustomerServices();
 
 export default class ExporterDashboard extends Component {
     constructor(props) {
@@ -270,6 +260,9 @@ export default class ExporterDashboard extends Component {
             })
             .catch((error) => {
                 console.log("GetUserAppointments Error : ", error);
+                console.log("UpdateStatusByAgent Error: ", error);
+                    
+                OpenLoader: false,
                 this.setState({ OpenLoader: false });
             });
     }
