@@ -4,19 +4,6 @@ import "./UserDashboard.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-// import "../Product/GetUserMenus.css"
-import Modal from "@material-ui/core/Modal";
-// import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-// import GetUserMenus from "../Product/GetUserMenus";
-// import ProductServices from "../../services/ProductServices";
-// import CustomerServices from "../../services/CustomerServices";
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
-import ControlPointIcon from '@material-ui/icons/ControlPoint';
 
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -26,36 +13,20 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import moment from 'moment';
-import DeleteIcon from "@material-ui/icons/Delete";
 
-import RestaurantIcon from "@material-ui/icons/Restaurant";
-// import AgricultureIcon from '@mui/icons-material/Agriculture';
-// import AgricultureIcon from '@material-ui/icons/Agriculture';
-import KitchenIcon from '@material-ui/icons/Kitchen';
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
-import HomeIcon from "@material-ui/icons/Home";
-import FeedbackIcon from "@material-ui/icons/Feedback";
 import Backdrop from "@material-ui/core/Backdrop";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Snackbar from "@material-ui/core/Snackbar";
 import CloseIcon from "@material-ui/icons/Close";
-import SearchIcon from "@material-ui/icons/Search";
 import TextField from "@material-ui/core/TextField";
-import InputBase from "@material-ui/core/InputBase";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import AuthServices from "../../configurations/AuthServices";
 
-// import Button from '@mui/material/Button';
-// import Typography from '@mui/material/Typography';
 import Pagination from "@material-ui/lab/Pagination";
-import { FormatListBulletedRounded } from "@material-ui/icons";
 
 const authServices = new AuthServices();
 const minDate = new Date(Date.now());
@@ -65,9 +36,6 @@ export default class FarmerDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //
-
-
       Message: "",
       NumberOfRecordPerPage: 6,
       PageNumber: 0,
@@ -285,7 +253,6 @@ handlePayentModeInput=()=>{
         console.log("GetUserAppointments Error : ", error);
         this.setState({ OpenLoader: false });
       });
-   
     }
   }
 
@@ -567,16 +534,7 @@ handlePayentModeInput=()=>{
                     this.handleOrderCourierFlag();
                   }}
                 >
-                  <div className="NavButtonText">Courier Detials </div>
-                </div>
-
-                <div
-                  className={TrackCourierFlag ? "NavButton1" : "NavButton2"}
-                  onClick={() => {
-                    this.handleTrackCourierFlag();
-                  }}
-                >
-                  <div className="NavButtonText">Track Courier</div>
+                  <div className="NavButtonText">Add Courier Details </div>
                 </div>
 
                 <div

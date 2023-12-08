@@ -7,16 +7,12 @@ import TextField from "@material-ui/core/TextField";
 import ControlPointIcon from '@material-ui/icons/ControlPoint';
 import moment from 'moment';
 // import DeleteIcon from '@material-ui/icons/Delete';
-import CreateIcon from '@material-ui/icons/Create';
+// import CreateIcon from '@material-ui/icons/Create';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import EditIcon from '@material-ui/icons/Edit';
-
-
-
-import Box from '@material-ui/core/Box';
+// import Box from '@material-ui/core/Box';
 // import CustomerServices from "../../services/CustomerServices";
-
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -39,9 +35,7 @@ import Paper from "@material-ui/core/Paper";
 import TableCell from "@material-ui/core/TableCell";
 
 
-
 const authServices = new AuthServices();
-
 function rand() {
   return Math.round(Math.random() * 20) - 10;
 }
@@ -70,7 +64,6 @@ const styles = theme => ({
 
 // const productServices = new ProductServices();
 // const customerServices = new CustomerServices();
-
 
 class AdminDashboard extends Component {
   constructor(props) {
@@ -121,77 +114,54 @@ class AdminDashboard extends Component {
     };
   }
 
-  //
   componentWillMount() {
-
     this.AllAgentList();
-
   }
-
 
   handleSnackBarClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
     this.setState({ OpenSnackBar: false });
   };
-
-
-
-
-
-
-
-
 
   handlePaging = async (e, value) => {
     debugger
     let state = this.state;
     console.log("Current Page : ", value);
-
     this.setState({
       PageNumber: value,
     });
 
-    if (this.state.OpenHome) {
-      await this.GetAllOrderDetails(value);
+    // if (this.state.OpenHome) {
+    //   // await this.GetAllOrderDetails(value);
+    // }
 
-    }
     if (this.state.FeedBackDetails) {
       await this.handleFeedBackAdmin(value)
     }
     if (this.state.CustomerListManagement) {
       await this.handleCustomerListData(value)
     }
-
     if (this.state.CourierListAdmin) {
       await this.GetCourierDataAdmin(value)
     }
-
-
   };
-
 
   SignOut = async () => {
     await localStorage.removeItem("token");
     this.props.history.push("/SignIn");
   };
 
-
-
   handleClose = () => {
     this.setState({
       openModel: false
     })
-
   };
-
 
   getModalStyle = () => {
     const top = 50 + rand();
     const left = 50 + rand();
-
     return {
       top: `${top}%`,
       left: `${left}%`,
@@ -199,21 +169,12 @@ class AdminDashboard extends Component {
     };
   }
 
-
-
-
   ///////////////////////////////////// Courier Management System //////////////////////////////////
-
-
-
-  //
   componentDidMount=()=>{
-    this.AllAgentList();
- }
+    this.AllAgentList(); // list of all agents
+  }
 
   handleHomeNav = () => {
-
-
     this.setState({
       PageNumber: 0,
       AssignAgentAdmin: false,
@@ -221,11 +182,8 @@ class AdminDashboard extends Component {
       CustomerListManagement: false,
       CourierListAdmin: false,
     });
-
-    this.GetAllOrderDetails(this.state.PageNumber);
+    // this.GetAllOrderDetails(this.state.PageNumber);
   };
-
-
 
   handleCustomerList = () => {
     this.setState({
@@ -233,7 +191,6 @@ class AdminDashboard extends Component {
       AssignAgentAdmin: false,
       CustomerListManagement: true,
       CourierListAdmin: false,
-
     });
     this.GetALLCustomerDataAdmin()
   }
@@ -245,16 +202,15 @@ class AdminDashboard extends Component {
       CourierListAdmin: true,
       AssignAgentAdmin: false,
     });
-
     this.GetCourierDataAdmin(this.state.PageNumber)
   }
+
   HandleAssignAgentAdmin = () => {
     this.setState({
       AssignAgentAdmin: true,
       AgentDetailsHome: false,
       CustomerListManagement: false,
       CourierListAdmin: false,
-
     });
     this.GetCourierDataAdmin(
       this.AllAgentList()
@@ -344,7 +300,6 @@ class AdminDashboard extends Component {
   }
 
   handleInputChangeAgentData = (e) => {
-
     let val = e.target.value
     if (e.target.name === "FirstNameAgent") {
       this.setState({
@@ -382,12 +337,9 @@ class AdminDashboard extends Component {
         EmailAgentFlag: false
       })
     }
-
-
     this.setState({
       [e.target.name]: e.target.value
     })
-
   }
 
 
@@ -442,37 +394,29 @@ class AdminDashboard extends Component {
         .AgentRegister(res)
         .then((data) => {
           console.log("filedata : ", data);
-
           if (data.data.data !== null) {
-
             this.setState({
-
               AgentDetailList: true,
-
               OpenLoader: false,
               OpenSnackBar: true,
               Message: data.data.message
             });
-
           }
         })
         .catch((error) => {
           console.log("GetUserAppointments Error : ", error);
           this.setState({ OpenLoader: false });
         });
-
     }
   }
 
   handledeleteAdminAgent =(id)=>{
     authServices
-
       .DeleteCourierIdAgent(id)
       .then((data) => {
         console.log("filedata : ", data);
         debugger
         if (data !== null) {
-
           this.setState({
             OpenLoader: false,
             OpenSnackBar: true,
@@ -504,19 +448,14 @@ class AdminDashboard extends Component {
         .UpdateAgentDataByADmin(this.state.EditAgentId,res)
         .then((data) => {
           console.log("filedata : ", data);
-
           if (data.data.data !== null) {
-
             this.setState({
-
               AgentDetailList: true,
-
               OpenLoader: false,
               OpenSnackBar: true,
               Message: data.data.message
             });
             this.AllAgentList()
-
           }
         })
         .catch((error) => {
@@ -534,7 +473,6 @@ class AdminDashboard extends Component {
         console.log("GetUserAppointments Data : ", data);
         // debugger
         if (data.data.data !== null) {
-
           this.setState({
             CustomerDetails: data.data.data,
             TotalPages: data.data.data.totalPages,
@@ -638,7 +576,7 @@ class AdminDashboard extends Component {
                   Courier Management System (Admin)
 
                 </Typography>
-               
+              
 
                 <Button
                   color="inherit"
@@ -1318,7 +1256,4 @@ class AdminDashboard extends Component {
 AdminDashboard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-
-
-
 export default withStyles(styles)(AdminDashboard);

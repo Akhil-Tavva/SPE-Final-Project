@@ -2,7 +2,7 @@ import './App.css'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
-import Auth from './components/Auth'
+// import Auth from './components/Auth'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 import UserDashboard from './components/Dashboard/UserDashboard'
 import AgentDashboard from './components/Dashboard/AgentDashboard'
@@ -10,7 +10,7 @@ import AgentDashboard from './components/Dashboard/AgentDashboard'
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <Router>
         <Switch>
           <Route exact path="/" component={SignUp} />

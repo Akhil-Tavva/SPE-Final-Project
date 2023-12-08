@@ -7,10 +7,10 @@
 	background-color: #f3f3ed91;
     background-image: url('./Asserts/Food_Delivery11.avif');
     background-color: #cccccc; /* Used if the image is unavailable */
-  /*height: 500px; /* You must set a specified height */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+	/*height: 500px; /* You must set a specified height */
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
 }
 .SignUp-Container .SignUp-SubContainer {
 	height: 575px;

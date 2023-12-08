@@ -334,7 +334,6 @@
 }
 
 .bodyContent {
- 
   min-height: 800px;
   width: 100%;
   background-image: url("../Asserts/courier.jpg") !important;
@@ -490,7 +489,6 @@
   /* width: 90% !important; */
   margin: 30px !important;
   margin-right: none !important;
- 
 }
 .cardContent{
   width: 226px;
