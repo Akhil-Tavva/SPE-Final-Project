@@ -1,3 +1,0 @@
-# CourierManagement
-
-### SPE major project
