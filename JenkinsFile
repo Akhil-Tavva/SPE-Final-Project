@@ -5,7 +5,7 @@ pipeline
     {
         // Path = "/usr/local/bin/minikube:${PATH}"
         // registry = "akhiltavva/"
-        // registryCredential = "dockerhub"
+        registryCredential = "DockerHubCred"
         dockerImage = ""
     }
     stages
@@ -32,36 +32,36 @@ pipeline
             {
                 dir("backend/")
                 {
-                    // sh "mvn clean install"
+                    sh "mvn clean install"
                     sh "docker build -t akhiltavva/backend:latest ."
                 }
             }
         }
-        // stage('Frontend DockerHub Image Push')
-        // {
-        //     steps
-        //     {
-        //         script
-        //         {
-        //             docker.withRegistry('', registryCredential)
-        //             {
-        //                 sh "docker push akhiltavva/frontend:latest"
-        //             }
-        //         }
-        //     }
-        // }
-        // stage('Backend DockerHub Image Push')
-        // {
-        //     steps
-        //     {
-        //         script
-        //         {
-        //             docker.withRegistry('', registryCredential)
-        //             {
-        //                 sh "docker push akhiltavva/backend:latest"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Frontend DockerHub Image Push')
+        {
+            steps
+            {
+                script
+                {
+                    docker.withRegistry('', registryCredential)
+                    {
+                        sh "docker push akhiltavva/frontend:latest"
+                    }
+                }
+            }
+        }
+        stage('Backend DockerHub Image Push')
+        {
+            steps
+            {
+                script
+                {
+                    docker.withRegistry('', registryCredential)
+                    {
+                        sh "docker push akhiltavva/backend:latest"
+                    }
+                }
+            }
+        }
     }
 }
