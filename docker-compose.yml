@@ -6,29 +6,29 @@ services:
       - '3000:3000'
     networks:
       - mynetwork
-#     depends_on:
-#       - backend
+    depends_on:
+      - backend
 
-#   backend:
-#     image: akhiltavva/backend:latest
-#     ports:
-#       - '9091:9090'
-#     depends_on:
-#       - serviceName
-#     environment:
-#       - DB_HOST:localhost:3306
-#       - DB_NAME:courier_delivery
-#       - DB_USERNAME:root
-#       - DB_PASSWORD:Akhil@0124
+  backend:
+    image: akhiltavva/backend:latest
+    ports:
+      - '9091:9090'
+    depends_on:
+      - serviceName
+    environment:
+      - DB_HOST:localhost:3306
+      - DB_NAME:courier_delivery
+      - DB_USERNAME:root
+      - DB_PASSWORD:Akhil@0124
     
-#   serviceName:
-#     image: mysql:latest
-#     ports:
-#       - '3307:3306'
-#     extra_hosts:
-#       - "host.docker.internal:host-gateway"
-#     networks:
-#       - mynetwork
+  serviceName:
+    image: mysql:latest
+    ports:
+      - '3307:3306'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - mynetwork
 
-# networks:
-#   mynetwork:
+networks:
+  mynetwork:
