@@ -16,10 +16,10 @@ services:
     depends_on:
       - serviceName
     environment:
-      - DB_HOST:localhost:3306
-      - DB_NAME:courier_delivery
-      - DB_USERNAME:root
-      - DB_PASSWORD:Akhil@0124
+      - DB_HOST=localhost:3306
+      - DB_NAME=courier_delivery
+      - DB_USERNAME=root
+      - DB_PASSWORD=
     
   serviceName:
     image: mysql:latest
