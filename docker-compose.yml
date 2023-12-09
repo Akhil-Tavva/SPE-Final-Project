@@ -4,12 +4,29 @@ services:
     image: akhiltavva/frontend:latest
     ports:
       - '3000:3000'
-    depends_on:
-      - backend
+    # networks:
+    #   - mynetwork
+    # depends_on:
+    #   - backend
+
   backend:
     image: akhiltavva/backend:latest
     ports:
       - '9091:9090'
+  #   depends_on:
+  #     - serviceName
+  
+  # serviceName:
+  #   image: mysql:latest
+  #   ports:
+  #     - '3306:3306'
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
+    # networks:
+    #   -mynetwork
+
+# networks:
+#   mynetwork:
     # environment:
-      # - MONGO=mongodb+srv://chirag:chirag@cluster0.xxq7wug.mongodb.net/doctor_app?retryWrites=true&w=majority
-      # - JWT=a1cd158e2b34d47af6d0b446f59a326849f0dd8eb7ac51244f4ab4c1cb99552b9f856a8fb488f20fdbf0d489fc93b4d94fb71148a1bd24e2386a6c71e4d8a3cd
+    #   - MONGO=mongodb+srv://chirag:chirag@cluster0.xxq7wug.mongodb.net/doctor_app?retryWrites=true&w=majority
+    #   - JWT=a1cd158e2b34d47af6d0b446f59a326849f0dd8eb7ac51244f4ab4c1cb99552b9f856a8fb488f20fdbf0d489fc93b4d94fb71148a1bd24e2386a6c71e4d8a3cd
