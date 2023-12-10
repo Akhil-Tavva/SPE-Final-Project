@@ -2,33 +2,40 @@ version: '3'
 services:
   frontend:
     image: akhiltavva/frontend:latest
+    # build:
+    #   context: ./frontend
     ports:
       - '3000:3000'
-    networks:
-      - mynetwork
     depends_on:
       - backend
 
   backend:
     image: akhiltavva/backend:latest
+    # build:
+    #   context: ./backend
     ports:
       - '9091:9090'
     depends_on:
-      - serviceName
+      - database
     environment:
-      - DB_HOST=localhost:3306
-      - DB_NAME=courier_delivery
+      - DB_HOST=localhost:3306/courier_delivery?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+      # - DB_NAME=courier_delivery
       - DB_USERNAME=root
       - DB_PASSWORD=
     
-  serviceName:
+  database:
     image: mysql:latest
     ports:
       - '3307:3306'
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    networks:
-      - mynetwork
+    # extra_hosts:
+    #   - "host.docker.internal:host-gateway"
+    environment:
+      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+      MYSQL_DATABASE: your_database_name
+      MYSQL_USER: your_mysql_username
+      MYSQL_PASSWORD: your_mysql_password
+    volumes:
+      - db_data:/var/lib/mysql  # Persist data to avoid losing database state
 
-networks:
-  mynetwork:
+volumes:
+  db_data:
