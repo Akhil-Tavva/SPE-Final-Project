@@ -27,16 +27,6 @@ pipeline
                 }
             }
         }
-        stage('Build Backend Image'){
-            steps
-            {
-                dir("backend/")
-                {
-                    sh "mvn clean install"
-                    sh "docker build -t akhiltavva/backend:latest ."
-                }
-            }
-        }
         stage('Frontend DockerHub Image Push')
         {
             steps
@@ -47,6 +37,16 @@ pipeline
                     {
                         sh "docker push akhiltavva/frontend:latest"
                     }
+                }
+            }
+        }
+        stage('Build Backend Image'){
+            steps
+            {
+                dir("backend/")
+                {
+                    sh "mvn clean install"
+                    sh "docker build -t akhiltavva/backend:latest ."
                 }
             }
         }
@@ -63,12 +63,38 @@ pipeline
                 }
             }
         }
-        stage('Ansible Deployment'){
+        // stage('Ansible Deployment'){
+        //     steps{
+        //         script{
+        //             sh 'ansible-playbook -i inventory deploy.yml'
+        //         }
+        //     }
+        // }
+        // stage('Debugging') {
+        //     steps {
+        //         script {
+        //             echo "Current Directory: ${pwd()}"
+        //             echo "Workspace: ${env.WORKSPACE}"
+        //             echo "Contents of Deployment directory:"
+        //             sh 'ls -l /home/akhil/Desktop/Sem-7/Software Production Enginerring/SPE-Final-Project/'
+        //         }
+        //     }
+        // }
+
+        stage('Ansible Deployment') {
             steps{
-                script{
-                    sh 'ansible-playbook -i inventory playbook.yml'
-                }
+                ansiblePlaybook becomeUser: null,
+                colorized: true,
+                credentialsId: 'localhost-1',
+                disableHostKeyChecking: true,
+                installation: 'Ansible',
+                inventory: 'inventory',
+                playbook: 'playbook.yml',
+                sudoUser: null
             }
+            // steps{
+            //     ansiblePlaybook colorized: true, credentialsId: 'localhost', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'playbook.yml', sudoUser: null
+            // }
         }
     }
 }
