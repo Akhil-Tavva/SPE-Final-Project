@@ -377,8 +377,6 @@ handlePayentModeInput=()=>{
           console.log("GetUserAppointments Error : ", error);
           this.setState({ OpenLoader: false });
         });
-     
-    
     }
   }
 
@@ -474,7 +472,7 @@ handlePayentModeInput=()=>{
                     fontWeight: "bold"
                   }}
                 >
-                  Courier Management System (User)
+                  User
 
                 </Typography>
 

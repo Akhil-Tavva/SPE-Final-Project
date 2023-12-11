@@ -576,7 +576,7 @@ class AdminDashboard extends Component {
                     boxSizing: "border-box",
                   }}
                 >
-                  Courier Management System (Admin)
+                  Admin
 
                 </Typography>
               
