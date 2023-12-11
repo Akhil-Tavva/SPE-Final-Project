@@ -26,8 +26,11 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @RestController
 @CrossOrigin
@@ -43,7 +46,7 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    private Logger logger = LoggerFactory.getLogger(UserController.class);
+    private Logger logger = LogManager.getLogger(UserController.class);
 
     @Operation(security = @SecurityRequirement(name = "bearerAuth"))
     @PostMapping("/courier/create")

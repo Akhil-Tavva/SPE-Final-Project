@@ -20,8 +20,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.Optional;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 @RestController
 @CrossOrigin
@@ -39,7 +42,7 @@ public class AuthController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    private Logger logger = LoggerFactory.getLogger(AuthController.class);
+    private Logger logger = LogManager.getLogger(AuthController.class);
 
     @PostMapping("/register")
     public ResponseEntity<BasicDTO<RegisterResponseDTO>> registerUser(@RequestBody RegisterRequestDTO registerRequestDTO) {
