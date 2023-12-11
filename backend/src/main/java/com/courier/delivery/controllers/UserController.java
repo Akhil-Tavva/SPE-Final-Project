@@ -46,7 +46,8 @@ public class UserController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    private Logger logger = LogManager.getLogger(UserController.class);
+    // private Logger logger = LogManager.getLogger(UserController.class);
+    private static final Logger logger = LogManager.getLogger(UserController.class);
 
     @Operation(security = @SecurityRequirement(name = "bearerAuth"))
     @PostMapping("/courier/create")

@@ -42,7 +42,8 @@ public class AuthController {
     @Autowired
     private JWTUtil jwtUtil;
 
-    private Logger logger = LogManager.getLogger(AuthController.class);
+    // private Logger logger = LogManager.getLogger(AuthController.class);
+    private static final Logger logger = LogManager.getLogger(AuthController.class);
 
     @PostMapping("/register")
     public ResponseEntity<BasicDTO<RegisterResponseDTO>> registerUser(@RequestBody RegisterRequestDTO registerRequestDTO) {
