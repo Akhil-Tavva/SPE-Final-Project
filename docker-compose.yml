@@ -7,18 +7,7 @@ services:
     depends_on:
       - backend
 
-  backend:
-    image: akhiltavva/backend:latest
-    ports:
-      - '9090:9090'
-    depends_on:
-      - database
-    environment:
-      - MYSQL_HOST=database
-      - MYSQL_PORT=3306
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=root
-    
+
   database:
     image: mysql:latest
     ports:
@@ -31,6 +20,19 @@ services:
       MYSQL_PASSWORD: root
     volumes:
       - db_data:/var/lib/mysql  # Persist data to avoid losing database state
+      
+  backend:
+    image: akhiltavva/backend:latest
+    ports:
+      - '9090:9090'
+    depends_on:
+      - database
+    environment:
+      - MYSQL_HOST=database
+      - MYSQL_PORT=3306
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=root
+    
 
 volumes:
   db_data:
