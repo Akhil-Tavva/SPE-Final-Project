@@ -377,6 +377,8 @@ handlePayentModeInput=()=>{
           console.log("GetUserAppointments Error : ", error);
           this.setState({ OpenLoader: false });
         });
+     
+    
     }
   }
 
@@ -472,7 +474,7 @@ handlePayentModeInput=()=>{
                     fontWeight: "bold"
                   }}
                 >
-                  User
+                  Courier Management System (User)
 
                 </Typography>
 
@@ -933,13 +935,13 @@ handlePayentModeInput=()=>{
                                   >
                                     Amount
                                   </TableCell>
-
+{/* 
                                   <TableCell
                                     align="center"
                                     style={{ width: 210, fontWeight: 600, fontSize: 15 }}
                                   >
                                     Weight
-                                  </TableCell>
+                                  </TableCell> */}
                                   <TableCell
                                     align="center"
                                     style={{ width: 210, fontWeight: 600, fontSize: 15 }}
@@ -986,11 +988,11 @@ handlePayentModeInput=()=>{
 
                                         </TableCell>
                                         <TableCell align="center" style={{ width: 100 }}>
-                                          {data.amount}
+                                          {data.amount/1000}
                                         </TableCell>
-                                        <TableCell align="center" style={{ width: 100 }}>
+                                        {/* <TableCell align="center" style={{ width: 100 }}>
                                           {data.weight}
-                                        </TableCell>
+                                        </TableCell> */}
                                         <TableCell align="center" style={{ width: 100 }}>
                                           {data.status}
                                         </TableCell>
