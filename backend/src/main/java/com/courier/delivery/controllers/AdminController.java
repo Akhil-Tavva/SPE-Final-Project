@@ -69,7 +69,16 @@ public class AdminController {
     @DeleteMapping("/courier/delete/{orderId}")
     public ResponseEntity<BasicDTO<CourierDetails>> courierDelete(@PathVariable("orderId") Long orderId) {
         logger.info("[TYPE] incoming [METHOD] DELETE [API_NAME] courierDelete [ORDER_ID] {}", orderId);
+
+        // Check if the courier exists
+        Optional<CourierDetails> courierDetailsOptional = courierDetailsDAO.findById(orderId);
+        if (courierDetailsOptional.isEmpty()) {
+            throw new CourierNotFoundException();
+        }
+
+        // Delete the courier
         courierDetailsDAO.deleteById(orderId);
+
         logger.info("[TYPE] outgoing [METHOD] DELETE [API_NAME] courierDelete [STATUS] SUCCESS");
         return new ResponseEntity<>(new BasicDTO<>(true, "Delete successfully", null), HttpStatus.OK);
     }
@@ -208,5 +217,5 @@ public class AdminController {
         logger.info("[TYPE] outgoing [METHOD] PUT [API_NAME] updateAgentProfile [STATUS] SUCCESS");
         return new ResponseEntity<>(new BasicDTO<>(true, "Updated", user), HttpStatus.CREATED);
     }
-    
+
 }

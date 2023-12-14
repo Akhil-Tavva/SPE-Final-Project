@@ -1,0 +1,57 @@
+2023-12-13 19:53:00,266 [INFO] com.courier.delivery.CourierDeliveryApplication [main] Starting CourierDeliveryApplication using Java 17.0.9 on manish-Legion-Y540-15IRH with PID 76922 (/home/manish/Desktop/SPE/SPE-Final-Project/backend/target/classes started by manish in /home/manish/Desktop/SPE/SPE-Final-Project)
+2023-12-13 19:53:00,270 [INFO] com.courier.delivery.CourierDeliveryApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-13 19:53:00,938 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-13 19:53:00,985 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 38 ms. Found 2 JPA repository interfaces.
+2023-12-13 19:53:01,499 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9090 (http)
+2023-12-13 19:53:01,508 [INFO] org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-12-13 19:53:01,508 [INFO] org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-12-13 19:53:01,589 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-12-13 19:53:01,589 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1257 ms
+2023-12-13 19:53:01,763 [INFO] org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-13 19:53:01,812 [INFO] org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2023-12-13 19:53:01,928 [INFO] org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 19:53:02,028 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-12-13 19:53:03,117 [ERROR] com.zaxxer.hikari.pool.HikariPool [main] HikariPool-1 - Exception during pool initialization.
+2023-12-13 19:54:15,314 [INFO] com.courier.delivery.CourierDeliveryApplication [main] Starting CourierDeliveryApplication using Java 17.0.9 on manish-Legion-Y540-15IRH with PID 78039 (/home/manish/Desktop/SPE/SPE-Final-Project/backend/target/classes started by manish in /home/manish/Desktop/SPE/SPE-Final-Project)
+2023-12-13 19:54:15,316 [INFO] com.courier.delivery.CourierDeliveryApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-12-13 19:54:15,848 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-12-13 19:54:15,886 [INFO] org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 32 ms. Found 2 JPA repository interfaces.
+2023-12-13 19:54:16,252 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 9090 (http)
+2023-12-13 19:54:16,258 [INFO] org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-12-13 19:54:16,259 [INFO] org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-12-13 19:54:16,317 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-12-13 19:54:16,317 [INFO] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 964 ms
+2023-12-13 19:54:16,442 [INFO] org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-12-13 19:54:16,469 [INFO] org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.10.Final
+2023-12-13 19:54:16,557 [INFO] org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-12-13 19:54:16,611 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-12-13 19:54:16,824 [INFO] com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-12-13 19:54:16,833 [INFO] org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-12-13 19:54:17,286 [INFO] org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-12-13 19:54:17,291 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13 19:54:17,594 [WARN] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-12-13 19:54:18,250 [INFO] org.springframework.security.web.DefaultSecurityFilterChain [main] Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4aadf144, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68a97fc1, org.springframework.security.web.context.SecurityContextPersistenceFilter@7dfab58d, org.springframework.security.web.header.HeaderWriterFilter@11939a9f, org.springframework.web.filter.CorsFilter@227fc322, org.springframework.security.web.authentication.logout.LogoutFilter@7a17ffee, com.courier.delivery.utils.JwtFilter@6978a32a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@e0d9e3f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d4b32d1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@63053b71, org.springframework.security.web.session.SessionManagementFilter@3bbdf835, org.springframework.security.web.access.ExceptionTranslationFilter@1f1c7fde, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@52a3eef8]
+2023-12-13 19:54:18,399 [INFO] org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 9090 (http) with context path ''
+2023-12-13 19:54:18,406 [INFO] com.courier.delivery.CourierDeliveryApplication [main] Started CourierDeliveryApplication in 3.4 seconds (JVM running for 3.658)
+2023-12-13 19:57:10,923 [INFO] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-9090-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-12-13 19:57:10,924 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-12-13 19:57:10,925 [INFO] org.springframework.web.servlet.DispatcherServlet [http-nio-9090-exec-2] Completed initialization in 1 ms
+2023-12-13 19:57:10,989 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-2] [TYPE] incoming [METHOD] POST [API_NAME] registerUser
+2023-12-13 19:57:11,231 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-2] [TYPE] outgoing [METHOD] POST [API_NAME] registerUser [STATUS] SUCCESS
+2023-12-13 20:45:56,977 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-5] [TYPE] incoming [METHOD] POST [API_NAME] registerUser
+2023-12-13 20:45:57,058 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-5] [TYPE] outgoing [METHOD] POST [API_NAME] registerUser [STATUS] SUCCESS
+2023-12-13 21:13:34,965 [ERROR] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] [http-nio-9090-exec-10] Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+2023-12-13 21:14:42,474 [WARN] org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver [http-nio-9090-exec-4] Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 9, column: 2]]
+2023-12-13 21:14:54,111 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-6] [TYPE] incoming [METHOD] POST [API_NAME] login
+2023-12-13 21:14:54,111 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-6] [TYPE] internal [METHOD] loginHelper
+2023-12-13 21:14:54,113 [ERROR] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-6] [TYPE] error [METHOD] loginHelper [ERROR] User not found
+2023-12-13 21:14:54,115 [ERROR] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-6] [TYPE] error [API_NAME] login [ERROR] User not found
+2023-12-13 21:15:04,081 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-7] [TYPE] incoming [METHOD] POST [API_NAME] login
+2023-12-13 21:15:04,081 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-7] [TYPE] internal [METHOD] loginHelper
+2023-12-13 21:15:04,216 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-7] [TYPE] internal [METHOD] loginHelper [STATUS] SUCCESS
+2023-12-13 21:15:04,216 [INFO] com.courier.delivery.controllers.AuthController [http-nio-9090-exec-7] [TYPE] outgoing [METHOD] POST [API_NAME] login [STATUS] SUCCESS
+2023-12-13 21:15:56,426 [INFO] com.courier.delivery.controllers.UserController [http-nio-9090-exec-8] [TYPE] incoming [METHOD] POST [API_NAME] createCourier
+2023-12-13 21:15:56,451 [INFO] com.courier.delivery.controllers.UserController [http-nio-9090-exec-8] [TYPE] outgoing [METHOD] POST [API_NAME] createCourier [STATUS] SUCCESS
+2023-12-13 22:02:17,928 [INFO] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-12-13 22:02:17,930 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-12-13 22:02:17,936 [INFO] com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
