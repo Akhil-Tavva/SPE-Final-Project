@@ -672,7 +672,7 @@ handlePayentModeInput=()=>{
                                             <button className="submitbtn1"
                                               onClick={(e) => this.handleSubmitDetailsPaymentDetails(e)}
                                             >Submit</button>
-                                            <button className="cancelbhn">Cancel</button>
+                                            <button className="cancelbhn">Finish</button>
                                           </div>
 
                                         </form>
@@ -803,7 +803,7 @@ handlePayentModeInput=()=>{
                                       align="Left"
                                       style={{ width: 100, fontWeight: 600, fontSize: 15 }}
                                     >
-                                      Eexpected DeliveryDate
+                                      Expected DeliveryDate
                                     </TableCell>
                                     <TableCell
                                       align="Left"
@@ -988,7 +988,7 @@ handlePayentModeInput=()=>{
 
                                         </TableCell>
                                         <TableCell align="center" style={{ width: 100 }}>
-                                          {data.amount/1000}
+                                          {data.amount}
                                         </TableCell>
                                         {/* <TableCell align="center" style={{ width: 100 }}>
                                           {data.weight}

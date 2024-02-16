@@ -1,6 +1,5 @@
 package com.courier.delivery.utils;
 
-
 import com.courier.delivery.services.UserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
